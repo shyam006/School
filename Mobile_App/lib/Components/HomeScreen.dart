@@ -75,6 +75,9 @@ FirebaseAuth _auth = FirebaseAuth.instance;
                         borderRadius: BorderRadius.circular(10)
                       ),
                   onPressed: () async {
+                    final prefs =  await SharedPreferences.getInstance();
+                    prefs.remove('mobileNo');
+                    prefs.remove('uid');
                     await _auth.signOut();
                     Navigator.of(context).pushNamed('/Login');
                   },

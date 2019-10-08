@@ -33,14 +33,12 @@ class _SplashScreenState extends State<SplashScreen> {
     final prefs =  await SharedPreferences.getInstance();
     final key = 'mobileNo';
     final value1 = prefs.getString(key) ?? 0;
-    
     if(value1==0)
     {
       Navigator.popAndPushNamed(context, '/Login');
     }
     else
     {
-      //  prefs.setString('mobileNo', null);
       Navigator.popAndPushNamed(context, '/Home');
     }
   }
